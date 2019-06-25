@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>linux学习笔记</title>
-    <link>http://eiuapp.github.io/linux-hugo/ubuntu.html</link>
+    <link>https://eiuapp.github.io/linux-hugo/ubuntu.html</link>
     <description>Recent content on linux学习笔记</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 29 Sep 2018 20:00:00 +0800</lastBuildDate>
     
-	<atom:link href="http://eiuapp.github.io/linux-hugo/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://eiuapp.github.io/linux-hugo/ubuntu/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>docker break ufw&#39;s rules in ubuntu - env1</title>
-      <link>http://eiuapp.github.io/linux-hugo/ubuntu/ubuntu-docker-break-ufw-rules-state-1.html</link>
+      <link>https://eiuapp.github.io/linux-hugo/ubuntu/ubuntu-docker-break-ufw-rules-state-1.html</link>
       <pubDate>Sat, 29 Sep 2018 20:00:00 +0800</pubDate>
       
-      <guid>http://eiuapp.github.io/linux-hugo/ubuntu/ubuntu-docker-break-ufw-rules-state-1.html</guid>
+      <guid>https://eiuapp.github.io/linux-hugo/ubuntu/ubuntu-docker-break-ufw-rules-state-1.html</guid>
       <description>docker break ufw&amp;rsquo;s rules in ubuntu - env1
 env 当运行docker后
 sudo docker run --detach \ --restart always \ --hostname 192.168.168.137 \ --publish 192.168.168.137:12443:443 --publish 192.168.168.137:80:80 --publish 192.168.168.137:22:22 \ --name gitlab-ce-11.9.1-2 \ --volume /srv/gitlab9.1/config:/etc/gitlab \ --volume /srv/gitlab9.1/logs:/var/log/gitlab \ --volume /srv/gitlab9.1/data:/var/opt/gitlab \ gitlab/gitlab-ce:11.9.1-ce.0  也会导致 整个局域网能访问到 80
@@ -25,10 +25,10 @@ sudo docker run --detach \ --restart always \ --hostname 192.168.168.137 \ --pub
     
     <item>
       <title>docker break ufw&#39;s rules in ubuntu - env2</title>
-      <link>http://eiuapp.github.io/linux-hugo/ubuntu/ubuntu-docker-break-ufw-rules-state-2.html</link>
+      <link>https://eiuapp.github.io/linux-hugo/ubuntu/ubuntu-docker-break-ufw-rules-state-2.html</link>
       <pubDate>Sat, 29 Sep 2018 20:00:00 +0800</pubDate>
       
-      <guid>http://eiuapp.github.io/linux-hugo/ubuntu/ubuntu-docker-break-ufw-rules-state-2.html</guid>
+      <guid>https://eiuapp.github.io/linux-hugo/ubuntu/ubuntu-docker-break-ufw-rules-state-2.html</guid>
       <description>docker break ufw&amp;rsquo;s rules in ubuntu - env2
 ufw 阻止了从docker容器到外部的网络连接
 对我来说这是一个非常标准的设置，我有一台运行docker和ufw的ubuntu机器作为我的防火墙。 如果启用防火墙，则docker实例无法连接到外部
@@ -39,10 +39,10 @@ docker 配置 ubuntu@utuntu:~/lcnx/local/lvchuang-server$ sudo cat /etc/docker/d
     
     <item>
       <title>ubuntu</title>
-      <link>http://eiuapp.github.io/linux-hugo/ubuntu/</link>
+      <link>https://eiuapp.github.io/linux-hugo/ubuntu/</link>
       <pubDate>Thu, 20 Sep 2018 20:00:00 +0800</pubDate>
       
-      <guid>http://eiuapp.github.io/linux-hugo/ubuntu/</guid>
+      <guid>https://eiuapp.github.io/linux-hugo/ubuntu/</guid>
       <description>linux ubuntu</description>
     </item>
     
