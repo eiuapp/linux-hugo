@@ -17,9 +17,11 @@ install:
   - chmod +x hugo
   - export PATH=$PATH:$PWD
   - hugo version
-
+  
 script:
 # 运行hugo命令
+  - mkdir -p themes
+  - git clone https://github.com/skyao/hugo-material-docs themes/hugo-material-docs
   - hugo
 
 deploy:
