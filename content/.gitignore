@@ -7,3 +7,6 @@ flymd.html
 flymd.md
 *.temp
 deploy.sh
+/.bookignore
+/.gitlab-ci.yml
+/.travis.yml
