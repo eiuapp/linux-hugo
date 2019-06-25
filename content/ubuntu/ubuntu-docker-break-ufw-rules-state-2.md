@@ -25,11 +25,11 @@ https://oomake.com/question/4955599
 
 ```bash
 ubuntu@utuntu:~/lcnx/local/lvchuang-server$ sudo cat /etc/docker/daemon.json 
-{                                                               
+{
 	"hosts": ["tcp://0.0.0.0:2376","unix:///var/run/docker.sock"],
 	"registry-mirrors": ["https://0d6wdn2y.mirror.aliyuncs.com"],
 	"dns" : ["192.168.168.222"]
-}                                                               
+}
 ubuntu@utuntu:~/lcnx/local/lvchuang-server$ sudo cat /etc/default/docker 
 # Docker Upstart and SysVinit configuration file
 
@@ -57,8 +57,7 @@ ubuntu@utuntu:~/lcnx/local/lvchuang-server$ sudo cat /etc/default/docker | grep 
 # Use DOCKER_OPTS to modify the daemon startup options.
 #DOCKER_OPTS="--dns 8.8.8.8 --dns 8.8.4.4"
 DOCKER_OPTS="--iptables=false"
-ubuntu@utuntu:~/lcnx/local/lvchuang-server$ 
-
+ubuntu@utuntu:~/lcnx/local/lvchuang-server$
 ```
 
 ### docker container 现象 ###
