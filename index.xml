@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>前言 on linux学习笔记</title>
-    <link>http://localhost:1313/</link>
+    <link>http://eiuapp.github.io/linux-hugo/</link>
     <description>Recent content in 前言 on linux学习笔记</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 08 Jan 2019 21:07:13 +0100</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://eiuapp.github.io/linux-hugo/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>docker break ufw&#39;s rules in ubuntu - env1</title>
-      <link>http://localhost:1313/ubuntu/ubuntu-docker-break-ufw-rules-state-1.html</link>
+      <link>http://eiuapp.github.io/linux-hugo/ubuntu/ubuntu-docker-break-ufw-rules-state-1.html</link>
       <pubDate>Sat, 29 Sep 2018 20:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/ubuntu/ubuntu-docker-break-ufw-rules-state-1.html</guid>
+      <guid>http://eiuapp.github.io/linux-hugo/ubuntu/ubuntu-docker-break-ufw-rules-state-1.html</guid>
       <description>docker break ufw&amp;rsquo;s rules in ubuntu - env1
 env 当运行docker后
 sudo docker run --detach \ --restart always \ --hostname 192.168.168.137 \ --publish 192.168.168.137:12443:443 --publish 192.168.168.137:80:80 --publish 192.168.168.137:22:22 \ --name gitlab-ce-11.9.1-2 \ --volume /srv/gitlab9.1/config:/etc/gitlab \ --volume /srv/gitlab9.1/logs:/var/log/gitlab \ --volume /srv/gitlab9.1/data:/var/opt/gitlab \ gitlab/gitlab-ce:11.9.1-ce.0  也会导致 整个局域网能访问到 80
@@ -25,10 +25,10 @@ sudo docker run --detach \ --restart always \ --hostname 192.168.168.137 \ --pub
     
     <item>
       <title>docker break ufw&#39;s rules in ubuntu - env2</title>
-      <link>http://localhost:1313/ubuntu/ubuntu-docker-break-ufw-rules-state-2.html</link>
+      <link>http://eiuapp.github.io/linux-hugo/ubuntu/ubuntu-docker-break-ufw-rules-state-2.html</link>
       <pubDate>Sat, 29 Sep 2018 20:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/ubuntu/ubuntu-docker-break-ufw-rules-state-2.html</guid>
+      <guid>http://eiuapp.github.io/linux-hugo/ubuntu/ubuntu-docker-break-ufw-rules-state-2.html</guid>
       <description>docker break ufw&amp;rsquo;s rules in ubuntu - env2
 ufw 阻止了从docker容器到外部的网络连接
 对我来说这是一个非常标准的设置，我有一台运行docker和ufw的ubuntu机器作为我的防火墙。 如果启用防火墙，则docker实例无法连接到外部
@@ -39,28 +39,28 @@ docker 配置 ubuntu@utuntu:~/lcnx/local/lvchuang-server$ sudo cat /etc/docker/d
     
     <item>
       <title>ubuntu</title>
-      <link>http://localhost:1313/ubuntu/</link>
+      <link>http://eiuapp.github.io/linux-hugo/ubuntu/</link>
       <pubDate>Thu, 20 Sep 2018 20:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/ubuntu/</guid>
+      <guid>http://eiuapp.github.io/linux-hugo/ubuntu/</guid>
       <description>linux ubuntu</description>
     </item>
     
     <item>
       <title>ssh</title>
-      <link>http://localhost:1313/ssh/</link>
+      <link>http://eiuapp.github.io/linux-hugo/ssh/</link>
       <pubDate>Sat, 29 Sep 2018 20:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/ssh/</guid>
+      <guid>http://eiuapp.github.io/linux-hugo/ssh/</guid>
       <description>linux ssh</description>
     </item>
     
     <item>
       <title>SSH远程命令找不到环境变量</title>
-      <link>http://localhost:1313/ssh/ssh-command-env-not-found-command.html</link>
+      <link>http://eiuapp.github.io/linux-hugo/ssh/ssh-command-env-not-found-command.html</link>
       <pubDate>Sat, 29 Sep 2018 20:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/ssh/ssh-command-env-not-found-command.html</guid>
+      <guid>http://eiuapp.github.io/linux-hugo/ssh/ssh-command-env-not-found-command.html</guid>
       <description>解决SSH远程执行命令找不到环境变量的问题
 env  ssh  原理 https://blog.csdn.net/whitehack/article/details/51705889 (这个写得最好) https://www.jianshu.com/p/77ebeb27a2dc (简单) https://www.cnblogs.com/zhenyuyaodidiao/p/9287497.html
 实践 在 ssh 服务端 找到 # If not running interactively, don&#39;t do anything , (在这一行下面,一般会有一句return之类的), 在这一行下面, 加入我们需要的环境变量. 但是, 也不能加多了, 加多了, scp 会失效.
@@ -70,19 +70,19 @@ $ vi /home/lcnx/.bashrc # If not running interactively, don&#39;t do anything ex
     
     <item>
       <title>tar</title>
-      <link>http://localhost:1313/tar/</link>
+      <link>http://eiuapp.github.io/linux-hugo/tar/</link>
       <pubDate>Tue, 28 Aug 2018 20:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/tar/</guid>
+      <guid>http://eiuapp.github.io/linux-hugo/tar/</guid>
       <description>linux tar</description>
     </item>
     
     <item>
       <title>linux tar: z: unknown function modifie 错误</title>
-      <link>http://localhost:1313/tar/linux-tar-z-unknown-function-modifie.html</link>
+      <link>http://eiuapp.github.io/linux-hugo/tar/linux-tar-z-unknown-function-modifie.html</link>
       <pubDate>Sat, 29 Sep 2018 20:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/tar/linux-tar-z-unknown-function-modifie.html</guid>
+      <guid>http://eiuapp.github.io/linux-hugo/tar/linux-tar-z-unknown-function-modifie.html</guid>
       <description>linux tar: z: unknown function modifie 错误
 转载 https://blog.csdn.net/syc001/article/details/72841916
 某些linux版本的机器上使用 tar -zxvf *.tar.gz 命令解压.tar.gz时会出现

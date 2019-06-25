@@ -3,67 +3,67 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>http://eiuapp.github.io/linux-hugo/</loc>
     <lastmod>2019-01-08T21:07:13+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/ubuntu/ubuntu-docker-break-ufw-rules-state-1.html</loc>
+    <loc>http://eiuapp.github.io/linux-hugo/ubuntu/ubuntu-docker-break-ufw-rules-state-1.html</loc>
     <lastmod>2018-09-29T20:00:00+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/ubuntu/ubuntu-docker-break-ufw-rules-state-2.html</loc>
+    <loc>http://eiuapp.github.io/linux-hugo/ubuntu/ubuntu-docker-break-ufw-rules-state-2.html</loc>
     <lastmod>2018-09-29T20:00:00+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/ubuntu/</loc>
+    <loc>http://eiuapp.github.io/linux-hugo/ubuntu/</loc>
     <lastmod>2018-09-20T20:00:00+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/ssh/</loc>
+    <loc>http://eiuapp.github.io/linux-hugo/ssh/</loc>
     <lastmod>2018-09-29T20:00:00+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/ssh/ssh-command-env-not-found-command.html</loc>
+    <loc>http://eiuapp.github.io/linux-hugo/ssh/ssh-command-env-not-found-command.html</loc>
     <lastmod>2018-09-29T20:00:00+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tar/</loc>
+    <loc>http://eiuapp.github.io/linux-hugo/tar/</loc>
     <lastmod>2018-08-28T20:00:00+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tar/linux-tar-z-unknown-function-modifie.html</loc>
+    <loc>http://eiuapp.github.io/linux-hugo/tar/linux-tar-z-unknown-function-modifie.html</loc>
     <lastmod>2018-09-29T20:00:00+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/ssh.html</loc>
+    <loc>http://eiuapp.github.io/linux-hugo/ssh.html</loc>
     <lastmod>2018-09-29T20:00:00+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tar.html</loc>
+    <loc>http://eiuapp.github.io/linux-hugo/tar.html</loc>
     <lastmod>2018-08-28T20:00:00+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/ubuntu.html</loc>
+    <loc>http://eiuapp.github.io/linux-hugo/ubuntu.html</loc>
     <lastmod>2018-09-29T20:00:00+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/categories.html</loc>
+    <loc>http://eiuapp.github.io/linux-hugo/categories.html</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags.html</loc>
+    <loc>http://eiuapp.github.io/linux-hugo/tags.html</loc>
     <priority>0</priority>
   </url>
   
