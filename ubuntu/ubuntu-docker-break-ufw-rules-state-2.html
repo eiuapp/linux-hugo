@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+  
+  
+  
+  
+   <html class="no-js"> 
+
+  <head lang="zh-cn">
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+
+    <title>docker break ufw&#39;s rules in ubuntu - env2 - linux学习笔记</title>
+    <meta name="generator" content="Hugo 0.51" />
+
+    
+    <meta name="description" content="docker break ufw&#39;s rules in ubuntu - env2">
+
+    <meta name="keywords" content="">
+    <link rel="canonical" href="http://localhost:1313/ubuntu/ubuntu-docker-break-ufw-rules-state-2.html">
+    
+    <meta name="author" content="曾云龙">
+    
+
+    <meta property="og:url" content="http://localhost:1313/ubuntu/ubuntu-docker-break-ufw-rules-state-2.html">
+    <meta property="og:title" content="docker break ufw&#39;s rules in ubuntu - env2 - linux学习笔记">
+    <meta property="og:description" content="docker break ufw&#39;s rules in ubuntu - env2">
+    <meta property="og:image" content="http://localhost:1313/images/logo.png">
+    <meta name="apple-mobile-web-app-title" content="docker break ufw&#39;s rules in ubuntu - env2 - linux学习笔记">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost:1313/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="http://localhost:1313/images/favicon.ico">
+
+    <style>
+      @font-face {
+        font-family: 'Icon';
+        src: url('http://localhost:1313/fonts/icon.eot');
+        src: url('http://localhost:1313/fonts/icon.eot')
+               format('embedded-opentype'),
+             url('http://localhost:1313/fonts/icon.woff')
+               format('woff'),
+             url('http://localhost:1313/fonts/icon.ttf')
+               format('truetype'),
+             url('http://localhost:1313/fonts/icon.svg')
+               format('svg');
+        font-weight: normal;
+        font-style: normal;
+      }
+    </style>
+
+    <link rel="stylesheet" href="http://localhost:1313/stylesheets/application.css">
+    <link rel="stylesheet" href="http://localhost:1313/stylesheets/temporary.css">
+    <link rel="stylesheet" href="http://localhost:1313/stylesheets/palettes.css">
+    <link rel="stylesheet" href="http://localhost:1313/stylesheets/highlight/highlight.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="http://localhost:1313/local/fonts.googleapis.com/css.css?family=Ubuntu:400,700|Ubuntu&#43;Mono">
+    <style>
+      body, input {
+        font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+      }
+      pre, code {
+        font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+      }
+    </style>
+
+    
+    <script src="http://localhost:1313/javascripts/modernizr.js"></script>
+
+    
+    <link href="http://localhost:1313/index.xml" rel="alternate" type="application/rss+xml" title="linux学习笔记" />
+    <link href="http://localhost:1313/index.xml" rel="feed" type="application/rss+xml" title="linux学习笔记" />
+    
+
+  </head>
+  <body class="palette-primary-red palette-accent-teal">
+
+
+
+	
+	
+
+
+<div class="backdrop">
+	<div class="backdrop-paper"></div>
+</div>
+
+<input class="toggle" type="checkbox" id="toggle-drawer">
+<input class="toggle" type="checkbox" id="toggle-search">
+<label class="toggle-button overlay" for="toggle-drawer"></label>
+
+<header class="header">
+	<nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        docker break ufw&#39;s rules in ubuntu - env2
+      </div>
+    </div>
+
+    
+
+    
+    <div class="button button-github" role="button" aria-label="GitHub">
+      <a href="https://github.com/eiuapp" title="@eiuapp on GitHub" target="_blank" class="toggle-button icon icon-github"></a>
+    </div>
+    
+    
+        
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" aria-label="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+</header>
+
+<main class="main">
+	<div class="drawer">
+		<nav aria-label="Navigation">
+  <a href="https://github.com/eiuapp/linux-hugo" class="project">
+    <div class="banner">
+      
+        <div class="logo">
+          <img src="http://localhost:1313/images/logo.png">
+        </div>
+      
+      <div class="name">
+        <strong>linux学习笔记 </strong>
+        
+          <br>
+          eiuapp/linux-hugo
+        
+      </div>
+    </div>
+  </a>
+
+  <div class="scrollable">
+    <div class="wrapper">
+      
+        <ul class="repo">
+          <li class="repo-stars">
+            <a href="https://github.com/eiuapp/linux-hugo/stargazers" target="_blank" title="Stargazers" data-action="star">
+              <i class="icon icon-star"></i> Stars
+              <span class="count">&ndash;</span>
+            </a>
+          </li>
+          <li class="repo-download">
+            <a href="https://github.com/eiuapp/linux-hugo/issues" target="_blank" title="Issues" data-action="download">
+              <i class="icon icon-download"></i> 意见反馈
+            </a>
+          </li>
+        </ul>
+        <hr>
+      
+
+      <div class="toc">
+        
+        <ul>
+          
+
+
+
+
+
+
+<li>
+  
+    
+
+
+<a  title="前言" href="http://localhost:1313/">
+	
+	前言
+</a>
+
+
+
+  
+</li>
+
+
+<li>
+  
+    
+
+
+<a  title="ubuntu" href="http://localhost:1313/ubuntu/">
+	
+	ubuntu
+</a>
+
+
+
+
+    <ul>
+      
+        
+        <li>
+          
+            
+
+
+<a  title="docker break ufw&#39;s rules in ubuntu - env1" href="http://localhost:1313/ubuntu/ubuntu-docker-break-ufw-rules-state-1.html">
+	
+	docker break ufw&#39;s rules in ubuntu - env1
+</a>
+
+
+
+          
+        </li>
+      
+        
+        <li>
+          
+            
+
+
+<a class="current" title="docker break ufw&#39;s rules in ubuntu - env2" href="http://localhost:1313/ubuntu/ubuntu-docker-break-ufw-rules-state-2.html">
+	
+	docker break ufw&#39;s rules in ubuntu - env2
+</a>
+
+
+<ul id="scrollspy">
+</ul>
+
+
+          
+        </li>
+      
+    </ul>
+
+  
+</li>
+
+
+<li>
+  
+    
+
+
+<a  title="ssh" href="http://localhost:1313/ssh/">
+	
+	ssh
+</a>
+
+
+
+
+    <ul>
+      
+        
+        <li>
+          
+            
+
+
+<a  title="SSH远程命令找不到环境变量" href="http://localhost:1313/ssh/ssh-command-env-not-found-command.html">
+	
+	SSH远程命令找不到环境变量
+</a>
+
+
+
+          
+        </li>
+      
+    </ul>
+
+  
+</li>
+
+
+<li>
+  
+    
+
+
+<a  title="tar" href="http://localhost:1313/tar/">
+	
+	tar
+</a>
+
+
+
+
+    <ul>
+      
+        
+        <li>
+          
+            
+
+
+<a  title="linux tar: z: unknown function modifie 错误" href="http://localhost:1313/tar/linux-tar-z-unknown-function-modifie.html">
+	
+	linux tar: z: unknown function modifie 错误
+</a>
+
+
+
+          
+        </li>
+      
+    </ul>
+
+  
+</li>
+
+
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+
+	</div>
+
+	<article class="article">
+		<div class="wrapper">
+			<h1>docker break ufw&#39;s rules in ubuntu - env2 </h1>
+
+			
+
+<p>docker break ufw&rsquo;s rules in ubuntu - env2</p>
+
+<p>ufw 阻止了从docker容器到外部的网络连接</p>
+
+<p>对我来说这是一个非常标准的设置，我有一台运行docker和ufw的ubuntu机器作为我的防火墙。 如果启用防火墙，则docker实例无法连接到外部</p>
+
+<p><a href="https://blog.36web.rocks/2016/07/08/docker-behind-ufw.html">https://blog.36web.rocks/2016/07/08/docker-behind-ufw.html</a>
+<a href="https://oomake.com/question/4955599">https://oomake.com/question/4955599</a></p>
+
+<h2 id="env">env</h2>
+
+<p>当运行docker后</p>
+
+<h3 id="docker-配置">docker 配置</h3>
+
+<pre><code class="language-bash">ubuntu@utuntu:~/lcnx/local/lvchuang-server$ sudo cat /etc/docker/daemon.json 
+{
+	&quot;hosts&quot;: [&quot;tcp://0.0.0.0:2376&quot;,&quot;unix:///var/run/docker.sock&quot;],
+	&quot;registry-mirrors&quot;: [&quot;https://0d6wdn2y.mirror.aliyuncs.com&quot;],
+	&quot;dns&quot; : [&quot;192.168.168.222&quot;]
+}
+ubuntu@utuntu:~/lcnx/local/lvchuang-server$ sudo cat /etc/default/docker 
+# Docker Upstart and SysVinit configuration file
+
+#
+# THIS FILE DOES NOT APPLY TO SYSTEMD
+#
+#   Please see the documentation for &quot;systemd drop-ins&quot;:
+#   https://docs.docker.com/engine/admin/systemd/
+#
+
+# Customize location of Docker binary (especially for development testing).
+#DOCKERD=&quot;/usr/local/bin/dockerd&quot;
+
+# Use DOCKER_OPTS to modify the daemon startup options.
+#DOCKER_OPTS=&quot;--dns 8.8.8.8 --dns 8.8.4.4&quot;
+DOCKER_OPTS=&quot;--iptables=false&quot;
+
+# If you need Docker to use an HTTP proxy, it can also be specified here.
+#export http_proxy=&quot;http://127.0.0.1:3128/&quot;
+
+# This is also a handy place to tweak where Docker's temporary files go.
+#export DOCKER_TMPDIR=&quot;/mnt/bigdrive/docker-tmp&quot;
+
+ubuntu@utuntu:~/lcnx/local/lvchuang-server$ sudo cat /etc/default/docker | grep DOCKER_OPTS
+# Use DOCKER_OPTS to modify the daemon startup options.
+#DOCKER_OPTS=&quot;--dns 8.8.8.8 --dns 8.8.4.4&quot;
+DOCKER_OPTS=&quot;--iptables=false&quot;
+ubuntu@utuntu:~/lcnx/local/lvchuang-server$
+</code></pre>
+
+<h3 id="docker-container-现象">docker container 现象</h3>
+
+<pre><code class="language-bash">ubuntu@utuntu:~/docker/images/ubuntu$ docker run -it -d --dns 192.168.168.222 --name ubuntu-tools ubuntu-tools:v1.0
+b4b3f7cd3d03c09f48eae8b0979678af57a07b2fcf118f80de653f8ef45c4e4e
+ubuntu@utuntu:~/docker/images/ubuntu$ docker exec -it ubuntu-tools bash
+root@b4b3f7cd3d03:/# cat /etc/resolv.conf 
+nameserver 192.168.168.222
+root@b4b3f7cd3d03:/# ping qq.com
+^C
+</code></pre>
+
+<p>当ufw disable后, 则 container 可以连接外网</p>
+
+<pre><code class="language-bash">root@b4b3f7cd3d03:/# ping qq.com
+PING qq.com (59.37.96.63) 56(84) bytes of data.
+64 bytes from 59.37.96.63: icmp_seq=1 ttl=54 time=4.77 ms
+64 bytes from 59.37.96.63: icmp_seq=2 ttl=54 time=4.69 ms
+^C
+--- qq.com ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1001ms
+rtt min/avg/max/mdev = 4.691/4.730/4.770/0.079 ms
+root@b4b3f7cd3d03:/# route 
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+default         172.17.0.1      0.0.0.0         UG    0      0        0 eth0
+172.17.0.0      *               255.255.0.0     U     0      0        0 eth0
+root@b4b3f7cd3d03:/# traceroute qq.com
+traceroute to qq.com (59.37.96.63), 30 hops max, 60 byte packets
+ 1  172.17.0.1 (172.17.0.1)  0.095 ms  0.036 ms  0.035 ms
+ 2  * * *
+ 3  218.17.137.1 (218.17.137.1)  4.515 ms  5.474 ms  5.535 ms
+ 4  202.105.103.117 (202.105.103.117)  3.896 ms 202.105.159.205 (202.105.159.205)  3.651 ms 202.105.159.213 (202.105.159.213)  3.763 ms
+ 5  117.176.37.59.broad.dg.gd.dynamic.163data.com.cn (59.37.176.117)  4.348 ms * *
+ 6  119.147.223.178 (119.147.223.178)  3.624 ms 119.147.223.254 (119.147.223.254)  3.451 ms 121.34.242.134 (121.34.242.134)  3.370 ms
+ 7  * * *
+ 8  14.17.2.250 (14.17.2.250)  6.196 ms 14.17.2.242 (14.17.2.242)  6.363 ms  6.457 ms
+ 9  * * *
+10  * * *
+11  * * *
+12  * * *
+13  * * *
+14  * * *
+15  * * *
+16  * * *^C
+root@b4b3f7cd3d03:/# 
+</code></pre>
+
+<h3 id="ufw-日志">ufw 日志</h3>
+
+<p>显示来自docker的阻塞连接</p>
+
+<pre><code class="language-bash">$ sudo tail /var/log/ufw.log
+Jun 11 11:46:08 utuntu kernel: [68180.673178] [UFW BLOCK] IN=enp2s0 OUT= MAC=01:00:5e:00:00:01:78:11:dc:3c:d0:1e:08:00 SRC=0.0.0.0 DST=224.0.0.1 LEN=32 TOS=0x00 PREC=0xC0 TTL=1 ID=0 DF PROTO=2  
+Jun 11 11:46:08 utuntu kernel: [68180.673448] [UFW BLOCK] IN=enp2s0 OUT= MAC=01:00:5e:00:00:01:78:11:dc:3c:d0:1e:08:00 SRC=0.0.0.0 DST=224.0.0.1 LEN=32 TOS=0x00 PREC=0xC0 TTL=1 ID=0 DF PROTO=2  
+Jun 11 11:46:09 utuntu kernel: [68181.175761] [UFW BLOCK] IN=enp2s0 OUT= MAC=01:00:5e:00:00:01:78:11:dc:17:16:de:08:00 SRC=0.0.0.0 DST=224.0.0.1 LEN=32 TOS=0x00 PREC=0xC0 TTL=1 ID=0 DF PROTO=2  
+Jun 11 11:46:09 utuntu kernel: [68181.176021] [UFW BLOCK] IN=enp2s0 OUT= MAC=01:00:5e:00:00:01:78:11:dc:17:16:de:08:00 SRC=0.0.0.0 DST=224.0.0.1 LEN=32 TOS=0x00 PREC=0xC0 TTL=1 ID=0 DF PROTO=2  
+Jun 11 11:48:14 utuntu kernel: [68306.114435] [UFW BLOCK] IN=enp2s0 OUT= MAC=01:00:5e:00:00:01:78:11:dc:3c:d0:1e:08:00 SRC=0.0.0.0 DST=224.0.0.1 LEN=32 TOS=0x00 PREC=0xC0 TTL=1 ID=0 DF PROTO=2  
+Jun 11 11:48:14 utuntu kernel: [68306.114666] [UFW BLOCK] IN=enp2s0 OUT= MAC=01:00:5e:00:00:01:78:11:dc:3c:d0:1e:08:00 SRC=0.0.0.0 DST=224.0.0.1 LEN=32 TOS=0x00 PREC=0xC0 TTL=1 ID=0 DF PROTO=2  
+Jun 11 11:48:14 utuntu kernel: [68306.617583] [UFW BLOCK] IN=enp2s0 OUT= MAC=01:00:5e:00:00:01:78:11:dc:17:16:de:08:00 SRC=0.0.0.0 DST=224.0.0.1 LEN=32 TOS=0x00 PREC=0xC0 TTL=1 ID=0 DF PROTO=2  
+Jun 11 11:48:14 utuntu kernel: [68306.617832] [UFW BLOCK] IN=enp2s0 OUT= MAC=01:00:5e:00:00:01:78:11:dc:17:16:de:08:00 SRC=0.0.0.0 DST=224.0.0.1 LEN=32 TOS=0x00 PREC=0xC0 TTL=1 ID=0 DF PROTO=2  
+Jun 11 11:50:19 utuntu kernel: [68431.555632] [UFW BLOCK] IN=enp2s0 OUT= MAC=01:00:5e:00:00:01:78:11:dc:3c:d0:1e:08:00 SRC=0.0.0.0 DST=224.0.0.1 LEN=32 TOS=0x00 PREC=0xC0 TTL=1 ID=0 DF PROTO=2
+</code></pre>
+
+<h2 id="step">step</h2>
+
+<h3 id="可跳过-失敗尝试">(可跳过)失敗尝试</h3>
+
+<h4 id="使用ip添加规则">使用ip添加规则。</h4>
+
+<pre><code>$ sudo ufw allow in from 172.16.42.2
+$ sudo ufw allow out from 172.16.42.2
+</code></pre>
+
+<h4 id="ip">ip</h4>
+
+<p>sudo ufw allow from 172.17.0.0/16</p>
+
+<h4 id="docker0">docker0</h4>
+
+<pre><code class="language-bash">sudo ufw allow in on docker0
+</code></pre>
+
+<h4 id="etc-ufw-before-rules">/etc/ufw/before.rules</h4>
+
+<pre><code class="language-bash">sudo vi /etc/ufw/before.rules
+</code></pre>
+
+<p>编辑/etc/ufw/before.rules如下： 在* filter部分中，在第一个必需行块之后，添加：</p>
+
+<pre><code># docker rules to enable external network access from the container
+# forward traffic accross the bridge 
+-A ufw-before-forward -i docker0 -j ACCEPT
+-A ufw-before-forward -i testbr0 -j ACCEPT
+-A ufw-before-forward -m state --state RELATED,ESTABLISHED -j ACCEPT
+</code></pre>
+
+<p>在文件末尾，在显示COMMIT的行之后，添加以下部分：</p>
+
+<pre><code>*nat
+:POSTROUTING ACCEPT [0:0]
+-A POSTROUTING -s 172.16.42.0/8 -o eth0 -j MASQUERADE
+# don't delete the 'COMMIT' line or these rules won't be processed
+COMMIT
+</code></pre>
+
+<p>保存文件后，使用sudo ufw disable &amp;&amp; sudo ufw enable重新启动ufw</p>
+
+<p>并没有改变仍然被阻止。</p>
+
+<h3 id="如果您熟悉iptables">如果您熟悉iptables</h3>
+
+<pre><code class="language-bash">sudo ufw show raw
+</code></pre>
+
+<p>但是,我不熟悉,这个就尴尬了.</p>
+
+<h3 id="etc-default-ufw以将default-forward-policy的值更改为-accept">/etc/default/ufw以将DEFAULT_FORWARD_POLICY的值更改为&rdquo;ACCEPT&rdquo;</h3>
+
+<p>这时, 参考</p>
+
+<p><a href="https://oomake.com/question/4955599">https://oomake.com/question/4955599</a></p>
+
+<pre><code>也许这是由于当前版本，但目前的答案不适用于我的系统(Docker 0.7.2与基础Ubuntu映像)。 解决方案解释为here in the official Docker documentation。 对于懒惰的人：
+
+编辑/etc/default/ufw以将DEFAULT_FORWARD_POLICY的值更改为&quot;ACCEPT&quot;，
+使用[sudo] ufw reload重新加载。
+这可以确保您将流量转发到Docker的桥接网络(就我目前对这些事情的理解而言......)。
+</code></pre>
+
+<p>发现有用.</p>
+
+
+
+
+			<footer class="footer">
+				
+
+
+
+
+
+
+    
+
+<nav class="pagination" aria-label="Footer">
+  <div class="previous">
+      <a href="http://localhost:1313/ubuntu/ubuntu-docker-break-ufw-rules-state-1.html" title="docker break ufw&#39;s rules in ubuntu - env1">
+        <span class="direction">
+          上一页
+        </span>
+        <div class="page">
+          <div class="button button-previous" role="button" aria-label="Previous">
+            <i class="icon icon-back"></i>
+          </div>
+          <div class="stretch">
+            <div class="title">
+              docker break ufw&#39;s rules in ubuntu - env1
+            </div>
+          </div>
+        </div>
+      </a>
+  </div>
+
+  <div class="next">
+  
+  
+      <a href="http://localhost:1313/ubuntu/" title="ubuntu">
+        <span class="direction">
+          下一页
+        </span>
+        <div class="page">
+          <div class="stretch">
+            <div class="title">
+              ubuntu
+            </div>
+          </div>
+          <div class="button button-next" role="button" aria-label="Next">
+            <i class="icon icon-forward"></i>
+          </div>
+        </div>
+      </a>
+  
+  
+  </div>
+</nav>
+
+
+
+
+
+			</footer>
+		</div>
+	</article>
+
+	<div class="results" role="status" aria-live="polite">
+		<div class="scrollable">
+			<div class="wrapper">
+				<div class="meta"></div>
+				<div class="list"></div>
+			</div>
+		</div>
+	</div>
+</main>
+
+    <script>
+    
+      var base_url = 'http:\/\/localhost:1313\/';
+      var repo_id  = 'eiuapp\/linux-hugo';
+    
+    </script>
+
+    <script src="http://localhost:1313/javascripts/application.js"></script>
+    
+
+    <script>
+      /* Add headers to scrollspy */
+      var headers   = document.getElementsByTagName("h2");
+      var scrollspy = document.getElementById('scrollspy');
+
+      if(scrollspy) {
+        if(headers.length > 0) {
+          for(var i = 0; i < headers.length; i++) {
+            var li = document.createElement("li");
+            li.setAttribute("class", "anchor");
+
+            var a  = document.createElement("a");
+            a.setAttribute("href", "#" + headers[i].id);
+            a.setAttribute("title", headers[i].innerHTML);
+            a.innerHTML = headers[i].innerHTML;
+
+            li.appendChild(a)
+            scrollspy.appendChild(li);
+          }
+        } else {
+          scrollspy.parentElement.removeChild(scrollspy)
+        }
+
+
+        /* Add permanent link next to the headers */
+        var headers = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+
+        for(var i = 0; i < headers.length; i++) {
+            var a = document.createElement("a");
+            a.setAttribute("class", "headerlink");
+            a.setAttribute("href", "#" + headers[i].id);
+            a.setAttribute("title", "Permanent link")
+            a.innerHTML = "#";
+            headers[i].appendChild(a);
+        }
+      }
+    </script>
+
+    
+
+    <script src="http://localhost:1313/local/cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+

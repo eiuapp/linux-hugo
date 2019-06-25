@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux学习笔记</title>
+    <link>http://localhost:1313/tar.html</link>
+    <description>Recent content on linux学习笔记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 28 Aug 2018 20:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tar/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>tar</title>
+      <link>http://localhost:1313/tar/</link>
+      <pubDate>Tue, 28 Aug 2018 20:00:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tar/</guid>
+      <description>linux tar</description>
+    </item>
+    
+    <item>
+      <title>linux tar: z: unknown function modifie 错误</title>
+      <link>http://localhost:1313/tar/linux-tar-z-unknown-function-modifie.html</link>
+      <pubDate>Sat, 29 Sep 2018 20:00:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tar/linux-tar-z-unknown-function-modifie.html</guid>
+      <description>linux tar: z: unknown function modifie 错误
+转载 https://blog.csdn.net/syc001/article/details/72841916
+某些linux版本的机器上使用 tar -zxvf *.tar.gz 命令解压.tar.gz时会出现
+tar: z: unknown function modifier
+错误。
+而使用 tar -x *.tar.gz 会出现“tar: /dev/rmt/0: No such file or directory”错误。
+这是因为该linux下的tar不支持z参数造成的。在这种情况下，可以把解压过程分为两步：
+gzip -d yourfile.tar.gz。生成一个.tar文件。
+tar -xvf yourfile.tar。解压文件。</description>
+    </item>
+    
+  </channel>
+</rss>
