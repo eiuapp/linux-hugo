@@ -1,4 +1,4 @@
-baseurl = "http://eiuapp.github.io/linux-hugo/"
+baseurl = "https://eiuapp.github.io/linux-hugo/"
 languageCode = "zh-cn"
 uglyurls = true
 relativeURLs=false
