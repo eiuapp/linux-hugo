@@ -61,19 +61,19 @@ disablePathToLower = true
 [[menu.main]]
 	name   = "ubuntu"
 	identifier = "ubuntu"
-	url    = "/ubuntu/"
+	url    = "ubuntu/"
 	weight = 100
 
 [[menu.main]]
 	name   = "ssh"
 	identifier = "ssh"
-	url    = "/ssh/"
+	url    = "post/ssh/"
 	weight = 200
 
 [[menu.main]]
 	name   = "tar"
 	identifier = "tar"
-	url    = "/tar/"
+	url    = "post/tar/"
 	weight = 300
 
 [blackfriday]
