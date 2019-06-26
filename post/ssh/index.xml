@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>linux学习笔记</title>
-    <link>https://eiuapp.github.io/linux-hugo/ssh.html</link>
+    <link>https://eiuapp.github.io/linux-hugo/post/ssh.html</link>
     <description>Recent content on linux学习笔记</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 29 Sep 2018 20:00:00 +0800</lastBuildDate>
     
-	<atom:link href="https://eiuapp.github.io/linux-hugo/ssh/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://eiuapp.github.io/linux-hugo/post/ssh/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>ssh</title>
-      <link>https://eiuapp.github.io/linux-hugo/ssh/</link>
+      <link>https://eiuapp.github.io/linux-hugo/post/ssh/</link>
       <pubDate>Sat, 29 Sep 2018 20:00:00 +0800</pubDate>
       
-      <guid>https://eiuapp.github.io/linux-hugo/ssh/</guid>
+      <guid>https://eiuapp.github.io/linux-hugo/post/ssh/</guid>
       <description>linux ssh</description>
     </item>
     
     <item>
       <title>SSH远程命令找不到环境变量</title>
-      <link>https://eiuapp.github.io/linux-hugo/ssh/ssh-command-env-not-found-command.html</link>
+      <link>https://eiuapp.github.io/linux-hugo/post/ssh/ssh-command-env-not-found-command.html</link>
       <pubDate>Sat, 29 Sep 2018 20:00:00 +0800</pubDate>
       
-      <guid>https://eiuapp.github.io/linux-hugo/ssh/ssh-command-env-not-found-command.html</guid>
+      <guid>https://eiuapp.github.io/linux-hugo/post/ssh/ssh-command-env-not-found-command.html</guid>
       <description>解决SSH远程执行命令找不到环境变量的问题
 env  ssh  原理 https://blog.csdn.net/whitehack/article/details/51705889 (这个写得最好) https://www.jianshu.com/p/77ebeb27a2dc (简单) https://www.cnblogs.com/zhenyuyaodidiao/p/9287497.html
 实践 在 ssh 服务端 找到 # If not running interactively, don&#39;t do anything , (在这一行下面,一般会有一句return之类的), 在这一行下面, 加入我们需要的环境变量. 但是, 也不能加多了, 加多了, scp 会失效.

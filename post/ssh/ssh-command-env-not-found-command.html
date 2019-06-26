@@ -11,23 +11,23 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
 
-    <title> - linux学习笔记</title>
+    <title>SSH远程命令找不到环境变量 - linux学习笔记</title>
     <meta name="generator" content="Hugo 0.51" />
 
     
-    <meta name="description" content="Linux是一个操作系统。">
+    <meta name="description" content="解决SSH远程执行命令找不到环境变量的问题">
 
     <meta name="keywords" content="">
-    <link rel="canonical" href="https://eiuapp.github.io/linux-hugo/ssh.html">
+    <link rel="canonical" href="https://eiuapp.github.io/linux-hugo/post/ssh/ssh-command-env-not-found-command.html">
     
     <meta name="author" content="曾云龙">
     
 
-    <meta property="og:url" content="https://eiuapp.github.io/linux-hugo/ssh.html">
-    <meta property="og:title" content=" - linux学习笔记">
-    <meta property="og:description" content="Linux是一个操作系统。">
+    <meta property="og:url" content="https://eiuapp.github.io/linux-hugo/post/ssh/ssh-command-env-not-found-command.html">
+    <meta property="og:title" content="SSH远程命令找不到环境变量 - linux学习笔记">
+    <meta property="og:description" content="解决SSH远程执行命令找不到环境变量的问题">
     <meta property="og:image" content="https://eiuapp.github.io/linux-hugo/images/logo.png">
-    <meta name="apple-mobile-web-app-title" content=" - linux学习笔记">
+    <meta name="apple-mobile-web-app-title" content="SSH远程命令找不到环境变量 - linux学习笔记">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
@@ -104,7 +104,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        
+        SSH远程命令找不到环境变量
       </div>
     </div>
 
@@ -257,7 +257,7 @@
     
 
 
-<a  title="ssh" href="https://eiuapp.github.io/linux-hugo/ssh/">
+<a  title="ssh" href="https://eiuapp.github.io/linux-hugo/post/ssh/">
 	
 	ssh
 </a>
@@ -273,11 +273,14 @@
             
 
 
-<a  title="SSH远程命令找不到环境变量" href="https://eiuapp.github.io/linux-hugo/ssh/ssh-command-env-not-found-command.html">
+<a class="current" title="SSH远程命令找不到环境变量" href="https://eiuapp.github.io/linux-hugo/post/ssh/ssh-command-env-not-found-command.html">
 	
 	SSH远程命令找不到环境变量
 </a>
 
+
+<ul id="scrollspy">
+</ul>
 
 
           
@@ -294,7 +297,7 @@
     
 
 
-<a  title="tar" href="https://eiuapp.github.io/linux-hugo/tar/">
+<a  title="tar" href="https://eiuapp.github.io/linux-hugo/post/tar/">
 	
 	tar
 </a>
@@ -310,7 +313,7 @@
             
 
 
-<a  title="linux tar: z: unknown function modifie 错误" href="https://eiuapp.github.io/linux-hugo/tar/linux-tar-z-unknown-function-modifie.html">
+<a  title="linux tar: z: unknown function modifie 错误" href="https://eiuapp.github.io/linux-hugo/post/tar/linux-tar-z-unknown-function-modifie.html">
 	
 	linux tar: z: unknown function modifie 错误
 </a>
@@ -337,14 +340,114 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1> </h1>
+			<h1>SSH远程命令找不到环境变量 </h1>
 
 			
+
+<p>解决SSH远程执行命令找不到环境变量的问题</p>
+
+<h2 id="env">env</h2>
+
+<ul>
+<li>ssh</li>
+</ul>
+
+<h2 id="原理">原理</h2>
+
+<p><a href="https://blog.csdn.net/whitehack/article/details/51705889">https://blog.csdn.net/whitehack/article/details/51705889</a> (这个写得最好)
+<a href="https://www.jianshu.com/p/77ebeb27a2dc">https://www.jianshu.com/p/77ebeb27a2dc</a> (简单)
+<a href="https://www.cnblogs.com/zhenyuyaodidiao/p/9287497.html">https://www.cnblogs.com/zhenyuyaodidiao/p/9287497.html</a></p>
+
+<h2 id="实践">实践</h2>
+
+<p>在 ssh 服务端 找到 <code># If not running interactively, don't do anything</code> , (在这一行下面,一般会有一句<code>return</code>之类的), 在这一行下面, 加入我们需要的环境变量.
+但是, 也不能加多了, 加多了, scp 会失效.</p>
+
+<p>如下面,就是加多了, 如果报错, 则导致 远程scp不了文件.</p>
+
+<pre><code class="language-bash">$ vi /home/lcnx/.bashrc
+# If not running interactively, don't do anything
+export NVM_DIR=&quot;$HOME/.nvm&quot;
+[ -s &quot;$NVM_DIR/nvm.sh&quot; ] &amp;&amp; \. &quot;$NVM_DIR/nvm.sh&quot;  # This loads nvm
+[ -s &quot;$NVM_DIR/bash_completion&quot; ] &amp;&amp; \. &quot;$NVM_DIR/bash_completion&quot;  # This loads nvm bash_completion
+nvm use v11.14.0
+export PATH=$PATH:/home/lcnx/.nvm/versions/node/v11.14.0/bin
+[ -z &quot;$PS1&quot; ] &amp;&amp; return
+</code></pre>
+
+<p>应该修改成</p>
+
+<pre><code class="language-bash">$ vi /home/lcnx/.bashrc
+# If not running interactively, don't do anything
+export PATH=$PATH:/home/lcnx/.nvm/versions/node/v11.14.0/bin
+[ -z &quot;$PS1&quot; ] &amp;&amp; return
+</code></pre>
+
+<h2 id="ssh-客户端-查看所使用的-ssh服务端环境">ssh 客户端 查看所使用的 ssh服务端环境</h2>
+
+<pre><code>ssh lcnx@120.77.39.189 &quot;. /home/lcnx/.bashrc; env&quot;
+ssh lcnx@120.77.39.189 &quot;env&quot;
+</code></pre>
+
+<p>但是下面的 %HOME 取的是 ssh 客户端 的用户,所以无效.</p>
+
+<pre><code>ssh lcnx@120.77.39.189 &quot;. $HOME/.bashrc; env&quot;
+</code></pre>
+
 
 
 
 			<footer class="footer">
 				
+
+
+
+
+
+
+    
+
+<nav class="pagination" aria-label="Footer">
+  <div class="previous">
+      <a href="https://eiuapp.github.io/linux-hugo/post/ssh/" title="ssh">
+        <span class="direction">
+          上一页
+        </span>
+        <div class="page">
+          <div class="button button-previous" role="button" aria-label="Previous">
+            <i class="icon icon-back"></i>
+          </div>
+          <div class="stretch">
+            <div class="title">
+              ssh
+            </div>
+          </div>
+        </div>
+      </a>
+  </div>
+
+  <div class="next">
+  
+  
+      <a href="https://eiuapp.github.io/linux-hugo/post/tar/" title="tar">
+        <span class="direction">
+          下一页
+        </span>
+        <div class="page">
+          <div class="stretch">
+            <div class="title">
+              tar
+            </div>
+          </div>
+          <div class="button button-next" role="button" aria-label="Next">
+            <i class="icon icon-forward"></i>
+          </div>
+        </div>
+      </a>
+  
+  
+  </div>
+</nav>
 
 
 

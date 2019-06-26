@@ -23,32 +23,32 @@
   </url>
   
   <url>
-    <loc>https://eiuapp.github.io/linux-hugo/ssh/</loc>
+    <loc>https://eiuapp.github.io/linux-hugo/post/ssh/</loc>
     <lastmod>2018-09-29T20:00:00+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://eiuapp.github.io/linux-hugo/ssh/ssh-command-env-not-found-command.html</loc>
+    <loc>https://eiuapp.github.io/linux-hugo/post/ssh/ssh-command-env-not-found-command.html</loc>
     <lastmod>2018-09-29T20:00:00+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://eiuapp.github.io/linux-hugo/tar/</loc>
+    <loc>https://eiuapp.github.io/linux-hugo/post/tar/</loc>
     <lastmod>2018-08-28T20:00:00+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://eiuapp.github.io/linux-hugo/tar/linux-tar-z-unknown-function-modifie.html</loc>
+    <loc>https://eiuapp.github.io/linux-hugo/post/tar/linux-tar-z-unknown-function-modifie.html</loc>
     <lastmod>2018-09-29T20:00:00+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://eiuapp.github.io/linux-hugo/ssh.html</loc>
+    <loc>https://eiuapp.github.io/linux-hugo/post/ssh.html</loc>
     <lastmod>2018-09-29T20:00:00+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://eiuapp.github.io/linux-hugo/tar.html</loc>
+    <loc>https://eiuapp.github.io/linux-hugo/post/tar.html</loc>
     <lastmod>2018-08-28T20:00:00+08:00</lastmod>
   </url>
   
@@ -59,6 +59,11 @@
   
   <url>
     <loc>https://eiuapp.github.io/linux-hugo/categories.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://eiuapp.github.io/linux-hugo/post.html</loc>
     <priority>0</priority>
   </url>
   

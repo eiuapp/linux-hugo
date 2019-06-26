@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>linux学习笔记</title>
-    <link>https://eiuapp.github.io/linux-hugo/tar.html</link>
+    <link>https://eiuapp.github.io/linux-hugo/post/tar.html</link>
     <description>Recent content on linux学习笔记</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 28 Aug 2018 20:00:00 +0800</lastBuildDate>
     
-	<atom:link href="https://eiuapp.github.io/linux-hugo/tar/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://eiuapp.github.io/linux-hugo/post/tar/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>tar</title>
-      <link>https://eiuapp.github.io/linux-hugo/tar/</link>
+      <link>https://eiuapp.github.io/linux-hugo/post/tar/</link>
       <pubDate>Tue, 28 Aug 2018 20:00:00 +0800</pubDate>
       
-      <guid>https://eiuapp.github.io/linux-hugo/tar/</guid>
+      <guid>https://eiuapp.github.io/linux-hugo/post/tar/</guid>
       <description>linux tar</description>
     </item>
     
     <item>
       <title>linux tar: z: unknown function modifie 错误</title>
-      <link>https://eiuapp.github.io/linux-hugo/tar/linux-tar-z-unknown-function-modifie.html</link>
+      <link>https://eiuapp.github.io/linux-hugo/post/tar/linux-tar-z-unknown-function-modifie.html</link>
       <pubDate>Sat, 29 Sep 2018 20:00:00 +0800</pubDate>
       
-      <guid>https://eiuapp.github.io/linux-hugo/tar/linux-tar-z-unknown-function-modifie.html</guid>
+      <guid>https://eiuapp.github.io/linux-hugo/post/tar/linux-tar-z-unknown-function-modifie.html</guid>
       <description>linux tar: z: unknown function modifie 错误
 转载 https://blog.csdn.net/syc001/article/details/72841916
 某些linux版本的机器上使用 tar -zxvf *.tar.gz 命令解压.tar.gz时会出现
