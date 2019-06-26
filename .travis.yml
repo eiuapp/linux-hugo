@@ -3,6 +3,13 @@ language: go
 go:
   - "1.8"  # 指定Golang 1.8
 
+notifications:
+  email:
+    recipients:
+      - 273412935@qq.com # 设置通知邮件
+    on_success: change
+    on_failure: always
+
 # Specify which branches to build using a safelist
 # 分支白名单限制: 只有hugo分支的提交才会触发构建
 branches:
@@ -27,10 +34,13 @@ script:
 deploy:
   provider: pages # 重要，指定这是一份github pages的部署配置
   skip-cleanup: true # 重要，不能省略
-  local-dir: public # 静态站点文件所在目录
-  target-branch: gh-pages # 要将静态站点文件发布到哪个分支
-  github-token: $GITHUB_TOKEN # 重要，$GITHUB_TOKEN是变量，需要在GitHub上申请、再到配置到Travis
+  local-dir: public # 静态站点文件所在目录 Default static site output dir for Hugo
+#  repo: eiuapp/eiuapp.github.io # This is the slug of the repo you want to deploy your site to
+  target-branch: gh-pages # 要将静态站点文件发布到哪个分支 # GitHub pages branch to deploy to (in other cases it can be gh-pages)
+  github-token: $GITHUB_TOKEN # 重要，$GITHUB_TOKEN是变量，需要在GitHub上申请、再到配置到Travis  # This is the authentication which you will setup in the next step in travis-ci dashboard
 #  fqdn: eiu.app # 如果是自定义域名，此处要填
   keep-history: true # 是否保持target-branch分支的提交记录
+#  email: 273412935@qq.com
+#  name: "eiuapp"
   on:
     branch: master # 博客源码的分支
